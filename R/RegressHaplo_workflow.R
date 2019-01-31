@@ -559,7 +559,7 @@ get_loci.pipeline <- function(out_dir)
   loci_file <- paste(out_dir, "loci.csv", sep="")
   loci_df <- read.csv(loci_file, header=T, stringsAsFactors = F)
 
-  loci <- strsplit(loci_df$pos, split="\\+")
+  loci <- strsplit(as.character(loci_df$pos), split="\\+")
 
   return (loci)
 }
